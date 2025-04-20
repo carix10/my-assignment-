@@ -10,14 +10,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f8f9fa;
+    padding: 20px;
 }
 
 /* Container Layout */
 .container {
     display: flex;
-    width: 80%;
+    flex-direction: row;
+    width: 100%;
     max-width: 1200px;
     background: white;
     border-radius: 10px;
@@ -116,6 +118,7 @@ body {
 .signup-image {
     flex: 1;
     position: relative;
+    display: block;
 }
 
 .signup-image img {
@@ -147,6 +150,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 .ratings img {
@@ -154,4 +158,70 @@ body {
     height: 30px;
     border-radius: 50%;
     border: 2px solid white;
+}
+
+/* -------------------------------
+   Responsive Design Starts Here
+---------------------------------*/
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .signup-form {
+        padding: 30px 20px;
+    }
+
+    .signup-image {
+        height: 300px;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        max-width: 90%;
+    }
+
+    .overlay-text h1 {
+        font-size: 20px;
+    }
+
+    .overlay-text p {
+        font-size: 13px;
+    }
+
+    .google-btn,
+    .signup-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form header h2 {
+        font-size: 20px;
+    }
+
+    .google-btn,
+    .signup-btn {
+        padding: 10px;
+    }
+
+    .form-field input {
+        padding: 8px;
+    }
+
+    .overlay-text h1 {
+        font-size: 18px;
+    }
+
+    .overlay-text p {
+        font-size: 12px;
+    }
+
+    .ratings span {
+        font-size: 12px;
+    }
 }
